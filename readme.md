@@ -35,7 +35,7 @@
 
 ![04 Audio](./Pictures/ScreenShot/AUDIO.png)
 
-![05 VLOL](./Pictures/ScreenShot/VOL.png)
+![05 VOL](./Pictures/ScreenShot/Vol.png)
 
 ![06 BT](./Pictures/ScreenShot/BT.png)
 
