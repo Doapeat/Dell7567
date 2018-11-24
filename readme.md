@@ -64,8 +64,9 @@
 
 
 ##如果你认可我的努力，可以通过 `打赏` 支持我后续的更新
+
 |微信 |支付宝|
 | --- | --- |
-|![wxtpay](./Pictures/QR/Wxpay.png)|	![alipay](./Pictures/QR/Alipay.png)|
+|![wxtpay](./Pictures/QR/Wxpay.png)|![alipay](./Pictures/QR/Alipay.png)|
 
 ##感谢浏览！！！
