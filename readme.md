@@ -62,12 +62,14 @@
 	* 2.USBInjectAll.kext 更新到2018-11-08 (0.7.1)，FakePCIID_Broadcom_WiFi.kext 和 FakePCIID.kext更新到2018-1027，来自RehubMan大神，感谢！！！
 	* 3.更新几张图片（有的是上次截的，忘了放在这里面）。
 * 2018.13.3
-	*添加了ALCPlugFix，这个是用来修复耳机破音，源自网络 ，里面有用法说明，感谢制作此补丁的大婶。
+	*添加了ALCPlugFix，这个补丁是用来修复耳机破音，源自网络 ，里面有用法说明，感谢制作此补丁的大婶。
 
 
 ##如果你认可我的努力，可以通过 `打赏` 支持我后续的更新
+
+
 |支付宝红包|微信 |支付宝|
-|---| --- | --- |
+| --- | --- | --- |
 |![alipayredenvelope](./Pictures/QR/ARE.png)|![wxtpay](./Pictures/QR/Wxpay.png)|	![alipay](./Pictures/QR/Alipay.png)|
 
 
