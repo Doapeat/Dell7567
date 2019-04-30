@@ -14,8 +14,11 @@
 ## 已知问题
 
 * 1.触控板不能右键，两边都是左键，目前未修复。
-* 2.屏幕最低亮度还是过于亮，晚上特别刺眼，比win10下的最低亮度还亮，在10.14以及之前的版本中使用whatevergreen.kext v1.2.4及以前版本可以有效降低最低亮度，甚至比win10下还低得多，晚上尤为舒适。顺便说一句，我是换了屏幕的，亮度比原来要高一些。
+* ~~2.屏幕最低亮度还是过于亮，晚上特别刺眼，比win10下的最低亮度还亮，在10.14以及之前的版本中使用whatevergreen.kext v1.2.4及以前版本可以有效降低最低亮度，甚至比win10下还低得多，晚上尤为舒适。顺便说一句，我是换了屏幕的，亮度比原来要高一些。~~
 * 3.这一次我并没有装蓝牙驱动，有需要的自行安装
+* 4.有机友说更新以后进不去安装界面，可以看看这里 [新问题，更新以后进不去安装界面](https://github.com/Doapeat/Dell7567/issues/7 "打开链接")。
+* 5.这次附带一个自己的文章[DW1820A安装windows驱动教程（针对戴尔机型）](https://www.jianshu.com/p/6c6c5bf0dc54)。
+
 ## 注意事项
 * 1.适配系统： macOS 10.14 各版本 （10.14、 10.14.4 已测试通过）
 
@@ -78,15 +81,16 @@
 		* Lilu_v1.3.5
 		* AppleALC_v1.3.6
 
+* 2019.5.1
+ 	* 修复屏幕最低亮度过亮的Bug	
+
 
 ## 如果你认可我的努力，可以通过 `打赏` 支持我后续的更新
  
 
-
 |支付宝红包|微信 |支付宝|
 | --- | --- | --- |
-|![Alipay envelope](https://upload-images.jianshu.io/upload_images/16811449-4176ea54843483f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|![Wechat pay](https://upload-images.jianshu.io/upload_images/16811449-3f1be37277bad3c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-|![Alipay](https://upload-images.jianshu.io/upload_images/16811449-7a881429acebdf7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|
+|![Alipay envelope](https://upload-images.jianshu.io/upload_images/16811449-4176ea54843483f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|![Wechatpay](https://upload-images.jianshu.io/upload_images/16811449-3f1be37277bad3c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|![Alipay](https://upload-images.jianshu.io/upload_images/16811449-7a881429acebdf7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|
 
 ## 闲扯
 
