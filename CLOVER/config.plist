@@ -84,7 +84,7 @@
 		<key>Arguments</key>
 		<string>dart=0 kext-dev-mode=1 -alcbeta applbkl=0</string>
 		<key>DefaultVolume</key>
-		<string>MaxOS</string>
+		<string>MacOS</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -99,7 +99,7 @@
 		<key>HWPEnable</key>
 		<true/>
 		<key>UseARTFrequency</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -294,7 +294,7 @@
 				<key>Comment</key>
 				<string>DVMT for AppleIntelKBLGraphicsFramebuffer﻿ (Credits DalianSky) for 10.14.x</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				dkZI/wU=
