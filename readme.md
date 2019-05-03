@@ -16,8 +16,8 @@
 
 ## 已知问题
 
-* 1.触控板不能右键，两边都是左键，目前未修复。
-* ~~2.屏幕最低亮度还是过于亮，晚上特别刺眼，比win10下的最低亮度还亮，在10.14以及之前的版本中使用whatevergreen.kext v1.2.4及以前版本可以有效降低最低亮度，甚至比win10下还低得多，晚上尤为舒适。顺便说一句，我是换了屏幕的，亮度比原来要高一些。~~
+* 1.*已修复*  ~~触控板不能右键，两边都是左键，目前未修复。~~
+* 2.*已修复*  ~~屏幕最低亮度还是过于亮，晚上特别刺眼，比win10下的最低亮度还亮，在10.14以及之前的版本中使用whatevergreen.kext v1.2.4及以前版本可以有效降低最低亮度，甚至比win10下还低得多，晚上尤为舒适。顺便说一句，我是换了屏幕的，亮度比原来要高一些。~~
 * 3.这一次我并没有装蓝牙驱动，有需要的自行安装。
 * 4.睡眠后唤醒无声，暂未修复。
 
@@ -26,10 +26,10 @@
 
 * 2.未使用ssdt-x.aml变频,已测试使用Clover仿冒MacBookPro14,3，完美变频。看见有人说MacBookPro14,3存在问题，不能使用HDMI，建议换MacBookPro14,1，目前HDMI不能用，由于精力有限，暂时不换！  
 
-* 3.关于网卡:
-	* (1).鉴于DW1820A的特殊性，每次重启请点击关机，然后手动重启，在windows，macos，linux系统下都是如此，否则会导致卡在卡在苹果图标第二屏，解决方法就是长按电源关机再开机即可解决。
+ * 3.关于网卡:
+	~~(1).鉴于DW1820A的特殊性，每次重启请点击关机，然后手动重启，在windows，macos，linux系统下都是如此，否则会导致卡在卡在苹果图标第二屏，解决方法就是长按电源关机再开机即可解决。~~
 
-	* (2).dw1820a未屏蔽针脚，wifi第一次连接时请不要连接电源适配器，连接上之后请不要切换其他wifi，也不要关闭再打开，会死机，要切换的话先把电源，在关机，之后按开机键开机，这一系列操作之后再切换，而且也只能切换一次。在升级或者安装系统时每次重启就卡住直接长按5S电源键就可以继续了。
+	~~(2).dw1820a未屏蔽针脚，wifi第一次连接时请不要连接电源适配器，连接上之后请不要切换其他wifi，也不要关闭再打开，会死机，要切换的话先把电源，在关机，之后按开机键开机，这一系列操作之后再切换，而且也只能切换一次。在升级或者安装系统时每次重启就卡住直接长按5S电源键就可以继续了。~~
 
 	* (3).综上，慎重选择DW1820A，但DW1560和DW1830太贵。
 * 4.关于耳机：3.5mm耳机分为3段（不带麦克风）和4段（带麦克风）两种，经测试，这个机子在win下也是无法识别你插入的是3段还是4段的，要通过官网RealTek驱动自带的MaxxAudioPro这个软件来让用户选择是3段还是4段（就是你插入耳机的时候弹出来的那个页面），所以在Mac下用了都是默认3段，这样兼容性较强，所以带麦的耳机用不了麦，除非是USB接口的。
@@ -49,7 +49,8 @@
 
 ![显卡](https://upload-images.jianshu.io/upload_images/16811449-54fa2b645f3ffa2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![网卡DW1820A](https://upload-images.jianshu.io/upload_images/16811449-b960cf9f73eff781.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![DW1820A](https://upload-images.jianshu.io/upload_images/16811449-c0fa2720d8bd6f0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ![](https://upload-images.jianshu.io/upload_images/16811449-aec25a87ce5ca74c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -57,14 +58,17 @@
 
 ![运行稳定，温度还低](https://upload-images.jianshu.io/upload_images/16811449-cc7de1a70e0880f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
- 
+ ![按教程设置就行](https://upload-images.jianshu.io/upload_images/16811449-13ffc1480e4bdc31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ####没有蓝牙了，自己弄吧
 
 
 
 
 ## 更新日志
-
+* 2019.5.3
+	* 添加AirportBrcmFixup.kext，删除FakePCIID.kext、FakePCIID_BroadcomWiFi.kext，支持重启，支持切换WIFI，支持网卡内建。
+	* 更新VoodooPS2Controller.kext，触控板支持右键菜单，支持简单手势，需设置，看上图。
 * 2019.5.2
 	* 添加CPUFriend，变频更顺滑，频率更稳定，温度更低
 	* 更新NoTouchID，安全鉴定瞬间完成，不用风火轮
