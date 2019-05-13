@@ -10,20 +10,6 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change HDAS to HDEF</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					SERBUw==
-					</data>
-					<key>Replace</key>
-					<data>
-					SERFRg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change HECI to IMEI</string>
 					<key>Disabled</key>
 					<false/>
@@ -66,27 +52,15 @@
 				</dict>
 			</array>
 		</dict>
-		<key>FixHeaders</key>
-		<true/>
-		<key>SSDT</key>
-		<dict>
-			<key>DropOem</key>
-			<false/>
-			<key>Generate</key>
-			<dict>
-				<key>PluginType</key>
-				<true/>
-			</dict>
-		</dict>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 kext-dev-mode=1 -alcbeta applbkl=0</string>
+		<string>applbkl=0 dart=0 -rad24</string>
 		<key>DefaultVolume</key>
 		<string>MacOS</string>
 		<key>NeverHibernate</key>
-		<true/>
+		<false/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
@@ -99,14 +73,12 @@
 		<key>HWPEnable</key>
 		<true/>
 		<key>UseARTFrequency</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
 		<key>Audio</key>
 		<dict>
-			<key>AFGLowPowerState</key>
-			<false/>
 			<key>Inject</key>
 			<integer>56</integer>
 			<key>ResetHDA</key>
@@ -151,6 +123,8 @@
 			<string>Preboot</string>
 			<string>Recovery</string>
 		</array>
+		<key>Language</key>
+		<string>cn:0</string>
 		<key>Mouse</key>
 		<dict>
 			<key>Enabled</key>
@@ -168,36 +142,13 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>SimpleThemeDark</string>
-	</dict>
-	<key>Graphics</key>
-	<dict>
-		<key>EDID</key>
-		<dict>
-			<key>Inject</key>
-			<false/>
-		</dict>
-		<key>Inject</key>
-		<dict>
-			<key>ATI</key>
-			<false/>
-			<key>Intel</key>
-			<false/>
-			<key>NVidia</key>
-			<false/>
-		</dict>
-		<key>NvidiaGeneric</key>
-		<false/>
-		<key>NvidiaSingle</key>
-		<false/>
-		<key>PatchVBios</key>
-		<false/>
-		<key>ig-platform-id</key>
-		<string></string>
+		<string>mNight</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
 		<key>AppleRTC</key>
+		<true/>
+		<key>DellSMBIOSPatch</key>
 		<true/>
 		<key>KernelPm</key>
 		<true/>
@@ -238,26 +189,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>DVMT for AppleIntelKBLGraphicsFramebuffer﻿ (Credits DalianSky) for 10.14.x</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				dkZI/wU=
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>MatchOS</key>
-				<string>10.14.x</string>
-				<key>Name</key>
-				<string>AppleIntelKBLGraph﻿icsFramebuffer﻿﻿﻿</string>
-				<key>Replace</key>
-				<data>
-				60ZI/wU=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>change F%uT%04x to F%uTxxxx for AppleBacklightInjector.kext (credit RehabMan)</string>
 				<key>Disabled</key>
 				<false/>
@@ -272,22 +203,6 @@
 				<key>Replace</key>
 				<data>
 				RiV1VHh4eHgA
-				</data>
-			</dict>
-			<dict>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				TWFjLTAwQkU2RUQ3MUUzNUVCODY=
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>Open HandOff</string>
-				<key>Replace</key>
-				<data>
-				TWFjLTQ3M0QzMUVBQkVCOTNGOUI=
 				</data>
 			</dict>
 			<dict>
@@ -382,11 +297,11 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>Mobile</key>
-		<false/>
+		<true/>
 		<key>ProductName</key>
 		<string>MacBookPro14,3</string>
 		<key>Trust</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>

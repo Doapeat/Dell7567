@@ -60,15 +60,26 @@
 
  ![按教程设置就行](https://upload-images.jianshu.io/upload_images/16811449-13ffc1480e4bdc31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+![读卡器](https://upload-images.jianshu.io/upload_images/16811449-c3c9672a1bc267a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![SD读卡器，USB2.0的速度](https://upload-images.jianshu.io/upload_images/16811449-85e8c48f118d240d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ####没有蓝牙了，自己弄吧
 
 
 
 
 ## 更新日志
+* 2019.5.13
+	* 使用VirtualSMC驱动，和FakeSMC相比，很难说哪个更好，可以肯定的是前者更新
+	* 使用Hackintool驱动USB，读卡器已驱动
+	* 加入`-rad24`参数，强制使用24位色彩，颜色过渡更顺滑，想使用32位的可以去除
+	* 使用国际友人的亮度驱动，可以使用【Fn+S】和【Fn+B】进行控制（在此感谢）
+	* 由于使用SMCBatteryManager驱动，电池信息不是很完整，有需要的可以换成ACPIBatteryManager
+
 * 2019.5.3
-	* 添加AirportBrcmFixup.kext，删除FakePCIID.kext、FakePCIID_BroadcomWiFi.kext，支持重启，支持切换WIFI，支持网卡内建。
-	* 更新VoodooPS2Controller.kext，触控板支持右键菜单，支持简单手势，需设置，看上图。
+	* 添加AirportBrcmFixup.kext，删除FakePCIID.kext、FakePCIID_BroadcomWiFi.kext，支持重启，支持切换WIFI，支持网卡内建
+	* 更新VoodooPS2Controller.kext，触控板支持右键菜单，支持简单手势，需设置，看上图
 * 2019.5.2
 	* 添加CPUFriend，变频更顺滑，频率更稳定，温度更低
 	* 更新NoTouchID，安全鉴定瞬间完成，不用风火轮
