@@ -31,20 +31,11 @@
 			<key>ApplePanels</key>
 			<dict>
 				<key>F10Txxxx</key>
-				<data>
-				ABEAAAA0AFIAcwCUAL4A+gE2AXIBxQIvArkDYAQaBQoG
-				DgcQ
-				</data>
+				<data>ABEAAAA0AFIAcwCUAL4A+gE2AXIBxQIvArkDYAQaBQoGDgcQ</data>
 				<key>F11Txxxx</key>
-				<data>
-				ABEAAAA2AFQAfQCyAPUBSQGxAisCuANZBBME7AXzBzQI
-				rwrZ
-				</data>
+				<data>ABEAAAA2AFQAfQCyAPUBSQGxAisCuANZBBME7AXzBzQIrwrZ</data>
 				<key>F12Txxxx</key>
-				<data>
-				ABEAAAAYACcAOgBSAHEAlgDEAPwBQAGTAfYCbgL+A6oE
-				eAVs
-				</data>
+				<data>ABEAAAAYACcAOgBSAHEAlgDEAPwBQAGTAfYCbgL+A6oEeAVs</data>
 			</dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleBacklight</string>
@@ -55,9 +46,9 @@
 				<key>brightness</key>
 				<dict>
 					<key>max</key>
-					<integer>150</integer>
+					<integer>255</integer>
 					<key>min</key>
-					<integer>10</integer>
+					<integer>40</integer>
 				</dict>
 				<key>commit</key>
 				<dict>
@@ -70,7 +61,7 @@
 			<key>IONameMatch</key>
 			<string>backlight</string>
 			<key>IOProbeScore</key>
-			<integer>5500</integer>
+			<integer>2500</integer>
 			<key>IOProviderClass</key>
 			<string>IOACPIPlatformDevice</string>
 		</dict>
