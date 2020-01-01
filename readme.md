@@ -13,47 +13,11 @@
 | 声卡 / Sound Card | Realtek ALC256 ( layout-id:2/56 )|
 | 网卡 / Network Card | Dell DW1820A ( BCM94350ZAE ) |
 
-## 已知问题
-
-
-## 注意事项
-* 1.适配系统： macOS 10.14 各版本 （10.14、 10.14.4 已测试通过）
-
-* 2.未使用ssdt-x.aml变频,已测试使用Clover仿冒MacBookPro14,3，完美变频。看见有人说MacBookPro14,3存在问题，不能使用HDMI，建议换MacBookPro14,1，目前HDMI不能用，由于精力有限，暂时不换！  
-
-
-* 5.有机友说更新以后进不去安装界面，可以看看这里 [新问题，更新以后进不去安装界面](https://github.com/Doapeat/Dell7567/issues/7 "打开链接")。
-* 6.这次附带一个自己的文章[DW1820A安装windows驱动教程（针对戴尔机型）](https://www.jianshu.com/p/6c6c5bf0dc54)。
-
-## 图片欣赏
-![](https://upload-images.jianshu.io/upload_images/16811449-fdf0ed11b1f0ab98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![](https://upload-images.jianshu.io/upload_images/16811449-0e02c0d48109d649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-![电池](https://upload-images.jianshu.io/upload_images/16811449-ee57efab642c5cfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![声卡](https://upload-images.jianshu.io/upload_images/16811449-aca97b641bd46047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![显卡](https://upload-images.jianshu.io/upload_images/16811449-54fa2b645f3ffa2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![DW1820A](https://upload-images.jianshu.io/upload_images/16811449-c0fa2720d8bd6f0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-![](https://upload-images.jianshu.io/upload_images/16811449-aec25a87ce5ca74c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![之前有24档的😢](https://upload-images.jianshu.io/upload_images/16811449-bc0be88289d0a34d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![运行稳定，温度还低](https://upload-images.jianshu.io/upload_images/16811449-cc7de1a70e0880f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
- ![按教程设置就行](https://upload-images.jianshu.io/upload_images/16811449-13ffc1480e4bdc31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![读卡器](https://upload-images.jianshu.io/upload_images/16811449-c3c9672a1bc267a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![SD读卡器，USB2.0的速度](https://upload-images.jianshu.io/upload_images/16811449-85e8c48f118d240d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 
 ## 更新日志
+* 2020.1.1
+	* 修复CPU变频，通过CPU-S测得14档左右；
+
 * 2019.12.29
 	* 安装注意事项：
 		* 1.从BIOS中关闭WiFi和蓝牙再安装，安装完之后再开启并注入驱动，驱动位于/EFI/Clover/kexts/Other/Bluetooth；
@@ -122,7 +86,39 @@
 | --- | --- | --- |
 |![Alipay envelope](https://upload-images.jianshu.io/upload_images/16811449-4176ea54843483f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|![Wechatpay](https://upload-images.jianshu.io/upload_images/16811449-3f1be37277bad3c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|![Alipay](https://upload-images.jianshu.io/upload_images/16811449-7a881429acebdf7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|
 
-## 闲扯
+
+## 图片欣赏
 
 
-## 感谢浏览！！！
+![](https://upload-images.jianshu.io/upload_images/16811449-a3a14b199d832ad7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+![](https://upload-images.jianshu.io/upload_images/16811449-0e02c0d48109d649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![电池](https://upload-images.jianshu.io/upload_images/16811449-ee57efab642c5cfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![声卡](https://upload-images.jianshu.io/upload_images/16811449-aca97b641bd46047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![显卡](https://upload-images.jianshu.io/upload_images/16811449-54fa2b645f3ffa2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](https://upload-images.jianshu.io/upload_images/16811449-9b85a2fc64560050.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](https://upload-images.jianshu.io/upload_images/16811449-aa001d39b7ad2934.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![](https://upload-images.jianshu.io/upload_images/16811449-0f8e5c1d3f4105ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+![运行稳定，温度还低](https://upload-images.jianshu.io/upload_images/16811449-cc7de1a70e0880f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+ ![按教程设置就行](https://upload-images.jianshu.io/upload_images/16811449-13ffc1480e4bdc31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![SD读卡器，USB2.0的速度](https://upload-images.jianshu.io/upload_images/16811449-85e8c48f118d240d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+## 感谢浏览！！！!
