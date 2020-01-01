@@ -58,12 +58,12 @@
 	* 安装注意事项：
 		* 1.从BIOS中关闭WiFi和蓝牙再安装，安装完之后再开启并注入驱动，驱动位于/EFI/Clover/kexts/Other/Bluetooth；
 		* 2.安装过程中剩余2分钟安装完成时会自动重启，不用担心，直接选择刚才安装的盘启动；
+		* 使用ALCPlugFix修复耳机杂音前先运行`sudo mount -uw / && killall Finder`,感谢 `aa714` `lijiqiang` [升级到10.15后耳机不能用了](http://bbs.pcbeta.com/viewthread-1828962-1-1.html)
 	* 适配10.15.2；
 	* 感谢`黑果小兵`提供的镜像；
 	* 感谢`kttde`提供的SSDT-LPC.aml和[关于beta4升级beta5卡在AppleNVME Assert Failed的暂时解决办法](http://bbs.pcbeta.com/viewthread-1825003-1-1.html)；
 	* 已知问题：
-		* 耳机噪音暂未修复；
-		* CPU变频暂未修复；
+		* CPU变频暂未修复，SMBIOS切换到14,3可以实现自动变频，但是很多大佬都不推荐14,3；
 * 2019.5.13
 	* 使用VirtualSMC驱动，和FakeSMC相比，很难说哪个更好，可以肯定的是前者更新
 	* 使用Hackintool驱动USB，读卡器已驱动
