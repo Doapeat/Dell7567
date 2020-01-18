@@ -10,7 +10,7 @@
 | 内存 / Memory|  16 GB ( Hynix DDR4 2400MHz )|
 | 硬盘 / HardDrive| Hikvision C2000PRO 1T|
 | 显卡 / Graphics Card| Intel HD Graphics 630 (platform-id:0x591B0000) |
-| 声卡 / Sound Card | Realtek ALC256 ( layout-id:2/56 )|
+| 声卡 / Sound Card | Realtek ALC256 ( layout-id:56 )|
 | 网卡 / Network Card | Dell DW1820A ( BCM94350ZAE ) |
 
 
@@ -18,7 +18,7 @@
 * 2020.1.18
 	* Clover升级到v5103；
 	* 借用了国外大佬`Nihhaar`的VoodooI2C的驱动，非常感谢！！！目前触控板可以驱动，不过没有win10灵敏，具体自测；
-	* 增加了4K屏幕的支持，具体自测，我的是1080p；
+	* 增加了4K屏幕的支持，请到`Cover`目录下修改 `config_4K.plist` 为 `config.plist` ，具体自测，我的是1080p；
  	* 已知问题：
 		* 无法完全睡眠，长时间睡眠时间会睡死；
 		* 低音单元尝试了很多办法，还是没有办法驱动；
