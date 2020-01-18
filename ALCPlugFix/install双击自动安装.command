@@ -2,6 +2,7 @@
 
 
 path=${0%/*}
+sudo mount -uw / && killall Finder
 sudo cp -a "$path/ALCPlugFix" /usr/bin
 sudo chmod 755 /usr/bin/ALCPlugFix
 sudo chown root:wheel /usr/bin/ALCPlugFix
