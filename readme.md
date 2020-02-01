@@ -1,5 +1,6 @@
 ##之前有人让我建群，我懒，直到现在很多人遇到了问题找我，我才发现真是能力越大，责任越大，所以建个交流群吧![](https://upload-images.jianshu.io/upload_images/16811449-ef82375ff85c3a2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 
 话不多说，先上配置
 
@@ -7,26 +8,48 @@
 | ------ | ------ | 
 | 型号 / Model | Dell Inspiron 15 7000 Gaming (7567) |
 | 处理器 / CPU | Intel Core i7-7700HQ @ 2.80GHz |
-| 内存 / Memory|  16 GB ( Hynix DDR4 2400MHz )|
+| 内存 / Memory|  16 GB ( DDR4 2400MHz )|
 | 硬盘 / HardDrive| Hikvision C2000PRO 1T|
 | 显卡 / Graphics Card| Intel HD Graphics 630 (platform-id:0x591B0000) |
-| 声卡 / Sound Card | Realtek ALC256 ( layout-id:56 )|
+| 声卡 / Sound Card | Realtek ALC256 ( layout-id:14 )|
 | 网卡 / Network Card | Dell DW1820A ( BCM94350ZAE ) |
 
-
-## 更新日志
-* 2020.1.18
-	* Clover升级到v5103；
-	* 借用了国外大佬`Nihhaar`的VoodooI2C的驱动，非常感谢！！！目前触控板可以驱动，不过没有win10灵敏，具体自测；
-	* 增加了4K屏幕的支持，请到`Cover`目录下修改 `config_4K.plist` 为 `config.plist` ，具体自测，我的是1080p；
- 	* 已知问题：
-		* 无法完全睡眠，长时间睡眠时间会睡死；
-		* 低音单元尝试了很多办法，还是没有办法驱动；
-	* 安装注意事项：
-		* `CodecCommander.kext` 放到 `Library\Extensions\`下面可以解决唤醒无声问题，重建缓存命令（感谢黑果小兵）：
+## 安装注意事项
+* 从BIOS中关闭WiFi和蓝牙再安装，安装完之后再开启并注入驱动，驱动位于/EFI/Clover/kexts/Other/Bluetooth；
+* 安装过程中剩余2分钟安装完成时会自动重启，不用担心，直接选择刚才安装的盘启动；
+* 使用ALCPlugFix修复耳机杂音前先运行
+```
+sudo mount -uw / && killall Finder
+```
+* `CodecCommander.kext` 放到 `Library\Extensions\`下面可以解决唤醒无声问题，重建缓存命令（感谢黑果小兵）：
 ```
 sudo kextcache -i /
 ```
+* 从第三方来源安装程序：
+```
+sudo spctl --master-disable
+```
+* 在Clover.plist 中的SMBIOS仿冒机型改为`（14,3）`，原来机型是`（14,1）`的麻烦自己改一下，不修改会导致蓝牙或Wi-Fi驱动失败，需重装才能修复，以后不出大问题都不会换了，原因是`（14,3）`变频良好；
+
+## 更新日志
+
+* 2020.2.1 
+	* 没事就多待在家里玩玩黑苹果吧！少出门溜达！
+	* 在Clover.plist 中的SMBIOS仿冒机型改为`（14,3）`；
+	* 修改声卡`LayoutID=14`，成功驱动低音单元，但是低音单元和普通单元是分开的两个输出设备，解决办法详见：[MacOSX多音频设备混合输出方法](https://www.jianshu.com/p/f16e63817bc9)；
+	* 添加显卡信息，修改显存为2048M；
+	* 重新定制USB，内建蓝牙、摄像头和左侧的USB2.0，方便蓝牙鼠标使用；
+	* Lilu.kext、AllpleALC.kext、AirportBrcmFixup.kext、NoTouchID.kext常规升级；
+ 	* 已知问题：
+		* 睡眠时好时坏，具体自测；
+* 2020.1.18
+	* Clover升级到v5103；
+	* 借用了国外大佬`Nihhaar`的VoodooI2C的驱动，非常感谢！！！目前触控板可以驱动，不过没有win10灵敏，具体自测；
+	* 增加了4K屏幕的支持，请到`Cover`目录下修改`config_4K.plist`为`config.plist`，具体自测，我的是1080p；
+ 	* 已知问题：
+		* 无法完全睡眠，长时间睡眠时间会睡死；
+		* 低音单元尝试了很多办法，还是没有办法驱动；
+
 
 * 2020.1.1
 	* 修复CPU变频，通过CPU-S测得14档左右；
@@ -38,10 +61,8 @@ sudo kextcache -i /
 	* 已知问题：
 		* CPU变频暂未修复，SMBIOS切换到14,3可以实现自动变频，但是很多大佬都不推荐14,3；
 
-	* 安装注意事项：
-		* 1.从BIOS中关闭WiFi和蓝牙再安装，安装完之后再开启并注入驱动，驱动位于/EFI/Clover/kexts/Other/Bluetooth；
-		* 2.安装过程中剩余2分钟安装完成时会自动重启，不用担心，直接选择刚才安装的盘启动；
-		* 使用ALCPlugFix修复耳机杂音前先运行`sudo mount -uw / && killall Finder`,感谢 `aa714` `lijiqiang` [升级到10.15后耳机不能用了](http://bbs.pcbeta.com/viewthread-1828962-1-1.html)
+
+感谢 `aa714` `lijiqiang` [升级到10.15后耳机不能用了](http://bbs.pcbeta.com/viewthread-1828962-1-1.html)
 * 2019.5.13
 	* 使用VirtualSMC驱动，和FakeSMC相比，很难说哪个更好，可以肯定的是前者更新
 	* 使用Hackintool驱动USB，读卡器已驱动
