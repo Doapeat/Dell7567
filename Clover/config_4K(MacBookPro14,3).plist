@@ -163,7 +163,46 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<integer>56</integer>
+			<integer>14</integer>
+		</dict>
+		<key>Properties</key>
+		<dict>
+			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>Audio device</string>
+				<key>layout-id</key>
+				<data>
+				OAAAAA==
+				</data>
+				<key>model</key>
+				<string>CM238 HD Audio Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>
+				AAAbWQ==
+				</data>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device-id</key>
+				<data>
+				G1kAAA==
+				</data>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>enable-hdmi20</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
+				<key>model</key>
+				<string>HD Graphics 630</string>
+			</dict>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -172,7 +211,7 @@
 			<key>FixOwnership</key>
 			<true/>
 			<key>HighCurrent</key>
-			<true/>
+			<false/>
 			<key>Inject</key>
 			<true/>
 		</dict>
@@ -215,7 +254,7 @@
 			<key>Linux</key>
 			<false/>
 			<key>Tool</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>Theme</key>
 		<string>Catalina</string>
@@ -415,9 +454,7 @@
 		<key>Mobile</key>
 		<true/>
 		<key>ProductName</key>
-		<string>MacBookPro14,1</string>
-		<key>Trust</key>
-		<false/>
+		<string>MacBookPro14,3</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
