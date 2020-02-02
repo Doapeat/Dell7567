@@ -15,8 +15,13 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 | 网卡 / Network Card | Dell DW1820A ( BCM94350ZAE ) |
 
 ## 安装注意事项
-* 从BIOS中关闭WiFi和蓝牙再安装，安装完之后再开启并注入驱动，驱动位于/EFI/Clover/kexts/Other/Bluetooth；
+* `蓝牙驱动:` `BrcmBluetoothInjector.kext` `BrcmFirmwareData.kext` `BrcmPatchRAM2.kext` (3个)
+`WiFi驱动:` `AirportBrcmFixup.kext` (1个)
+在`\EFI\Clover\kexts\Off`下，是不会启用的，需要的自行放到`\EFI\Clover\kexts\Other` 注意安装顺序：先从BIOS中关闭WiFi和蓝牙再安装系统，然后安装`蓝牙` `WiFi`驱动。
+* `CPU变频驱动:` `CPUFriend.kext`  `CPUFriendDataProvider.kext`(2个)
+在`\EFI\Clover\kexts\Off`下，是不会启用的，需要的自行放到`\EFI\Clover\kexts\Other` SMBIOS机型设置为`（14,3）`的并且CPU是`i7 7700HQ`的不需要这两个驱动。
 * 安装过程中剩余2分钟安装完成时会自动重启，不用担心，直接选择刚才安装的盘启动；
+* 在Clover.plist 中的SMBIOS仿冒机型改为`（14,3）`，原来机型是`（14,1）`的麻烦自己改一下，不修改会导致蓝牙或Wi-Fi驱动失败，需重装才能修复，以后不出大问题都不会换了，原因是`（14,3）`变频良好；
 * 使用ALCPlugFix修复耳机杂音前先运行
 ```
 sudo mount -uw / && killall Finder
@@ -29,17 +34,20 @@ sudo kextcache -i /
 ```
 sudo spctl --master-disable
 ```
-* 在Clover.plist 中的SMBIOS仿冒机型改为`（14,3）`，原来机型是`（14,1）`的麻烦自己改一下，不修改会导致蓝牙或Wi-Fi驱动失败，需重装才能修复，以后不出大问题都不会换了，原因是`（14,3）`变频良好；
+
+
 
 ## 更新日志
 
-* 2020.2.1 
+* 2020.2.2 
 	* 没事就多待在家里玩玩黑苹果吧！少出门溜达！
+	* 昨天的Clover文件我忘记检查，导致安装失败或者无法进入系统，在此和大家说一句抱歉！今天修复了一下，建议删除原来的文件，仅保留SMBIOS信息，不要覆盖原文件；
 	* 在Clover.plist 中的SMBIOS仿冒机型改为`（14,3）`；
 	* 修改声卡`LayoutID=14`，成功驱动低音单元，但是低音单元和普通单元是分开的两个输出设备，解决办法详见：[MacOSX多音频设备混合输出方法](https://www.jianshu.com/p/f16e63817bc9)；
 	* 添加显卡信息，修改显存为2048M；
 	* 重新定制USB，内建蓝牙、摄像头和左侧的USB2.0，方便蓝牙鼠标使用；
 	* Lilu.kext、AllpleALC.kext、AirportBrcmFixup.kext、NoTouchID.kext常规升级；
+
  	* 已知问题：
 		* 睡眠时好时坏，具体自测；
 * 2020.1.18
@@ -49,7 +57,6 @@ sudo spctl --master-disable
  	* 已知问题：
 		* 无法完全睡眠，长时间睡眠时间会睡死；
 		* 低音单元尝试了很多办法，还是没有办法驱动；
-
 
 * 2020.1.1
 	* 修复CPU变频，通过CPU-S测得14档左右；
