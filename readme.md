@@ -1,4 +1,5 @@
-##之前有人让我建群，我懒，直到现在很多人遇到了问题找我，我才发现真是能力越大，责任越大，所以建个交流群吧![](https://upload-images.jianshu.io/upload_images/16811449-ef82375ff85c3a2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+##之前有人让我建群，我懒，直到现在很多人遇到了问题找我，我才发现真是能力越大，责任越大，所以建个交流群吧
+![](https://upload-images.jianshu.io/upload_images/16811449-ef82375ff85c3a2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 
@@ -15,6 +16,11 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 | 网卡 / Network Card | Dell DW1820A ( BCM94350ZAE ) |
 
 ## 安装注意事项
+* BIOS设置:
+	* 关闭 `Legacy Option ROMs`；
+	* 设置 `SATA Mode`为 `AHCI` ，自行百度；
+	* 关闭 `Secure Boot`；
+	* 关闭 `VT ` (最好)；
 * `蓝牙驱动:` `BrcmBluetoothInjector.kext` `BrcmFirmwareData.kext` `BrcmPatchRAM2.kext` (3个)
 `WiFi驱动:` `AirportBrcmFixup.kext` (1个)
 在`\EFI\Clover\kexts\Off`下，是不会启用的，需要的自行放到`\EFI\Clover\kexts\Other` 注意安装顺序：先从BIOS中关闭WiFi和蓝牙再安装系统，然后安装`蓝牙` `WiFi`驱动。
@@ -22,11 +28,13 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 在`\EFI\Clover\kexts\Off`下，是不会启用的，需要的自行放到`\EFI\Clover\kexts\Other` SMBIOS机型设置为`（14,3）`的并且CPU是`i7 7700HQ`的不需要这两个驱动。
 * 安装过程中剩余2分钟安装完成时会自动重启，不用担心，直接选择刚才安装的盘启动；
 * 在Clover.plist 中的SMBIOS仿冒机型改为`（14,3）`，原来机型是`（14,1）`的麻烦自己改一下，不修改会导致蓝牙或Wi-Fi驱动失败，需重装才能修复，以后不出大问题都不会换了，原因是`（14,3）`变频良好；
+* `CodecCommander.kext` 安装到 `Library\Extensions\`下面可以解决唤醒无声问题，不会安装的可以使用` Kext Utility`安装；
+
 * 使用ALCPlugFix修复耳机杂音前先运行
 ```
 sudo mount -uw / && killall Finder
 ```
-* `CodecCommander.kext` 放到 `Library\Extensions\`下面可以解决唤醒无声问题，重建缓存命令（感谢黑果小兵）：
+* 重建缓存命令（感谢黑果小兵），建议使用`Hackintool`，因为还要修复权限：
 ```
 sudo kextcache -i /
 ```
@@ -38,6 +46,15 @@ sudo spctl --master-disable
 
 
 ## 更新日志
+
+* 2020.2.24
+	* 本机型换网卡之后，目前各项功能已趋于完美；
+	* 感谢群友`VicQ`，他制作的声卡节点信息已经成功同时驱动了低音单元和前扬声器，已提交`AppleALC`作者审核，不出意外下个版本应该会发布。应`VicQ`要求，暂时不公布测试的`AppALC.kext`文件，静待官方发布；
+	* 使用了新的ssdt修复睡眠，并添加启动参数`darkwake=10`，再次感谢群友`VicQ`；
+	* 经过查阅资料，反复对比，使用重命名`ECDV to EC`的方式修补EC设备效果最好；
+	* 精简重命名规则、驱动和补丁；
+	* 已知问题：
+		* 7700HQ的显卡几乎只能运行在400MHz左右，极少的时间段下能运行的更高，而7300HQ似乎没有这个问题，希望大家自测；
 
 * 2020.2.2 
 	* 没事就多待在家里玩玩黑苹果吧！少出门溜达！
@@ -134,10 +151,9 @@ sudo spctl --master-disable
 
 ![](https://upload-images.jianshu.io/upload_images/16811449-a3a14b199d832ad7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
+![变频良好](https://upload-images.jianshu.io/upload_images/16811449-2f1c34e1c0004585.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![](https://upload-images.jianshu.io/upload_images/16811449-0e02c0d48109d649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 
 ![电池](https://upload-images.jianshu.io/upload_images/16811449-ee57efab642c5cfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -145,16 +161,8 @@ sudo spctl --master-disable
 
 ![显卡](https://upload-images.jianshu.io/upload_images/16811449-54fa2b645f3ffa2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](https://upload-images.jianshu.io/upload_images/16811449-9b85a2fc64560050.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![蓝牙](https://upload-images.jianshu.io/upload_images/16811449-9b85a2fc64560050.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](https://upload-images.jianshu.io/upload_images/16811449-aa001d39b7ad2934.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-![](https://upload-images.jianshu.io/upload_images/16811449-0f8e5c1d3f4105ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-
-![运行稳定，温度还低](https://upload-images.jianshu.io/upload_images/16811449-cc7de1a70e0880f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
  ![按教程设置就行](https://upload-images.jianshu.io/upload_images/16811449-13ffc1480e4bdc31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
