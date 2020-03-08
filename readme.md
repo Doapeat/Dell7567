@@ -21,23 +21,20 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 	* 设置 `SATA Mode`为 `AHCI` ，自行百度；
 	* 关闭 `Secure Boot`；
 	* 关闭 `VT ` (最好)；
-* `蓝牙驱动:` `BrcmBluetoothInjector.kext` `BrcmFirmwareData.kext` `BrcmPatchRAM2.kext` (3个)
+* `蓝牙驱动:` `BrcmBluetoothInjector.kext` `BrcmFirmwareData.kext` `BrcmPatchRAM2.kext` (3个)；
 `WiFi驱动:` `AirportBrcmFixup.kext` (1个)
-在`\EFI\Clover\kexts\Off`下，是不会启用的，需要的自行放到`\EFI\Clover\kexts\Other` 注意安装顺序：先从BIOS中关闭WiFi和蓝牙再安装系统，然后安装`蓝牙` `WiFi`驱动。
-* `CPU变频驱动:` `CPUFriend.kext`  `CPUFriendDataProvider.kext`(2个)
-在`\EFI\Clover\kexts\Off`下，是不会启用的，需要的自行放到`\EFI\Clover\kexts\Other` SMBIOS机型设置为`（14,3）`的并且CPU是`i7 7700HQ`的不需要这两个驱动。
-* 安装过程中剩余2分钟安装完成时会自动重启，不用担心，直接选择刚才安装的盘启动；
+在`\EFI\Clover\kexts\Off`下，是不会启用的，需要的自行放到`\EFI\Clover\kexts\Other` 注意安装顺序：先从BIOS中关闭WiFi和蓝牙再安装系统，然后安装`蓝牙` `WiFi`驱动；
+* `CPU变频驱动:`  SMBIOS机型设置为`（14,3）`的并且CPU是`i7 7700HQ`的不需要，CPU是`i5 7300HQ`的[看这里](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md)；
+
+* 安装过程中可能会在剩余2分钟安装完成时自动重启，不用担心，直接选择刚才安装的盘启动；
 * 在Clover.plist 中的SMBIOS仿冒机型改为`（14,3）`，原来机型是`（14,1）`的麻烦自己改一下，不修改会导致蓝牙或Wi-Fi驱动失败，需重装才能修复，以后不出大问题都不会换了，原因是`（14,3）`变频良好；
-* `CodecCommander.kext` 安装到 `Library\Extensions\`下面可以解决唤醒无声问题，不会安装的可以使用` Kext Utility`安装；
+* `CodecCommander.kext` 安装到 `Library\Extensions\`下面可以解决唤醒无声问题，不会安装的可以使用` Kext Utility` 、`Hackintool`等安装；
 
 * 使用ALCPlugFix修复耳机杂音前先运行
 ```
 sudo mount -uw / && killall Finder
 ```
-* 重建缓存命令（感谢黑果小兵），建议使用`Hackintool`，因为还要修复权限：
-```
-sudo kextcache -i /
-```
+
 * 从第三方来源安装程序：
 ```
 sudo spctl --master-disable
@@ -46,6 +43,13 @@ sudo spctl --master-disable
 
 
 ## 更新日志
+* 2020.3.8
+	* 使用`VooDooInput.kext`驱动触控板，触控更灵敏，同时修复睡眠唤醒之后偶尔出现触控板无法使用的问题；
+	* 合并1080P和4K的Config.plist文件；
+	* 注入网卡、显卡、声卡的PCI设备属性，更换DW1820A的请手动去掉`Config.plist/Devices/properties/#PciRoot(0x0)/Pci(0x1C,0x5)/Pci(0x0,0x0)`项目前面的`#`以启用，有助于解决部分搜不到手机热点的问题；
+	* 已知问题：
+		* 耳机使用`ALCplugFix`+`CodecCommander.kext`可能会导致插入耳机时内置MIC和耳机MIC均无法使用的问题，这是驱动与声卡节点不兼容的原因导致的，`VicQ`修改制作了新的驱动以解决这一问题，还在测试；
+		* 添加启动参数`-disablegfxfirmware`可以解决核显最高只能达到400Mhz的问题，自行斟酌使用；
 
 * 2020.2.24
 	* 本机型换网卡之后，目前各项功能已趋于完美；
