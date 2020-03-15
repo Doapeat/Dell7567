@@ -205,11 +205,11 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 
 ![SD读卡器，USB2.0的速度](https://upload-images.jianshu.io/upload_images/16811449-85e8c48f118d240d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##解锁CFG
+## 解锁CFG
 
-##机型不是Dell 7567，请不要看下面的方法；
+## 机型不是Dell 7567，请不要看下面的方法；
 
-##BIOS版本不是1.10.0，请小心使用！
+## BIOS版本不是1.10.0，请小心使用！
 
 ![可以看到地址为0x4DE](https://upload-images.jianshu.io/upload_images/16811449-5aa5833d754ad0b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
