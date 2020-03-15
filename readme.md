@@ -12,8 +12,8 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 | 内存 / Memory|  16 GB ( DDR4 2400MHz )|
 | 硬盘 / HardDrive| Hikvision C2000PRO 1T|
 | 显卡 / Graphics Card| Intel HD Graphics 630 (platform-id:0x591B0000) |
-| 声卡 / Sound Card | Realtek ALC256 ( layout-id:14 )|
-| 网卡 / Network Card | Dell DW1820A ( BCM94350ZAE ) |
+| 声卡 / Sound Card | Realtek ALC256 ( layout-id:16)|
+| 网卡 / Network Card | Dell DW1820A (BCM94350ZAE) |
 
 ## 安装注意事项
 * BIOS设置:
@@ -24,25 +24,41 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 * `蓝牙驱动:` `BrcmBluetoothInjector.kext` `BrcmFirmwareData.kext` `BrcmPatchRAM2.kext` (3个)；
 `WiFi驱动:` `AirportBrcmFixup.kext` (1个)
 在`\EFI\Clover\kexts\Off`下，是不会启用的，需要的自行放到`\EFI\Clover\kexts\Other` 注意安装顺序：先从BIOS中关闭WiFi和蓝牙再安装系统，然后安装`蓝牙` `WiFi`驱动；
-* `CPU变频驱动:`  SMBIOS机型设置为`（14,3）`的并且CPU是`i7 7700HQ`的不需要，CPU是`i5 7300HQ`的[看这里](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md)；
+* `CPU变频驱动:`  7700HQ和5700HQ都已经定制了`14,1`机型的CPUFriend；性能均为Blance，需要自行定制的[看这里](https://github.com/stevezhengshiqi/one-key-cpufriend/blob/master/README_CN.md)；
 
 * 安装过程中可能会在剩余2分钟安装完成时自动重启，不用担心，直接选择刚才安装的盘启动；
-* 在Clover.plist 中的SMBIOS仿冒机型改为`（14,3）`，原来机型是`（14,1）`的麻烦自己改一下，不修改会导致蓝牙或Wi-Fi驱动失败，需重装才能修复，以后不出大问题都不会换了，原因是`（14,3）`变频良好；
+* 在Clover.plist 中的SMBIOS仿冒机型改为`（14,1）`，原来机型是`（14,3）`的麻烦自己改一下，不修改会导致蓝牙或Wi-Fi驱动失败，需重装才能修复；
 * `CodecCommander.kext` 安装到 `Library\Extensions\`下面可以解决唤醒无声问题，不会安装的可以使用` Kext Utility` 、`Hackintool`等安装；
 
-* 使用ALCPlugFix修复耳机杂音前先运行
-```
-sudo mount -uw / && killall Finder
-```
+* ~~使用ALCPlugFix修复耳机杂音~~，改用由`VicQ`老哥制作的`ComboJack_For_Dell7567_Only`驱动耳机，可以驱动麦克风，自行选择，但仅支持7567，其他机型慎用！
 
-* 从第三方来源安装程序：
-```
-sudo spctl --master-disable
-```
+* 自己写了一些方便的脚本方便大家使用，在`Scripts`文件夹内，自行选择使用
+
+##解锁CFG
+推荐下面这两位老哥的解锁办法，两个办法的工具我都提供了，更推荐使用set_dump GUI来查找地址，速度更快！
+
+独行秀才的老窝：[OpenCore引导Mac下解除CFG LOCK锁定](https://shuiyunxc.gitee.io/2020/02/13/Unlock/index/)
+云屋小站：[无需刷BIOS！使用setup_var命令解锁MSR 0xE2锁定，修改dvmt值，开启AHCI](https://www.misonsky.cn/115.html)
+
+##今后的更新都是基于解锁`CFG lock`的EFI，没有解锁的请自行打补丁；
+
+
+###在此处提供一个简单的方法：写在文章最后
+
 
 
 
 ## 更新日志
+* 2020.3.15
+	* 重新定制触控板驱动，感谢`VicQ`老哥，使用GPI0中断方式驱动，效率更高，更加跟手；
+	* 改用ApplePS2Controller.kext，导致`Fn+S` `Fn+B`无法使用，但是可以在`设置`中修改成其他的快捷键，不过`设置`中`屏幕亮度`的选项隐藏了，插入一个外接键盘即可显示，有需要的自行换成VoodooPS2Controller.kext，不过不好驱动，容易掉触控板；
+	* 核显可以达到1.1Ghz，不过不稳定，应该是调度原因；
+	* 删除多余无用的驱动；
+	* 常规更新；
+	* 内建网卡；
+	* 已知问题：
+		* 电池睡眠正常，接外接适配器睡不死，外设全部取了一样睡不死；
+
 * 2020.3.8
 	* 使用`VooDooInput.kext`驱动触控板，触控更灵敏，同时修复睡眠唤醒之后偶尔出现触控板无法使用的问题；
 	* 合并1080P和4K的Config.plist文件；
@@ -152,20 +168,34 @@ sudo spctl --master-disable
 
 ## 图片欣赏
 
+![关于](https://upload-images.jianshu.io/upload_images/16811449-42036097fe743a56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](https://upload-images.jianshu.io/upload_images/16811449-a3a14b199d832ad7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![触控板完美驱动](https://upload-images.jianshu.io/upload_images/16811449-180fc59adbc63e4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ![变频良好](https://upload-images.jianshu.io/upload_images/16811449-2f1c34e1c0004585.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+![显卡](https://upload-images.jianshu.io/upload_images/16811449-175795f128563d76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![电源](https://upload-images.jianshu.io/upload_images/16811449-7cd7cd712c355dae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![image.png](https://upload-images.jianshu.io/upload_images/16811449-b0a06dec7d6c76f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 ![](https://upload-images.jianshu.io/upload_images/16811449-0e02c0d48109d649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![电池](https://upload-images.jianshu.io/upload_images/16811449-ee57efab642c5cfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![之前的电池](https://upload-images.jianshu.io/upload_images/16811449-ee57efab642c5cfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![现在的电池](https://upload-images.jianshu.io/upload_images/16811449-695a357756305874.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ![声卡](https://upload-images.jianshu.io/upload_images/16811449-aca97b641bd46047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![显卡](https://upload-images.jianshu.io/upload_images/16811449-54fa2b645f3ffa2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![开启HiDPI](https://upload-images.jianshu.io/upload_images/16811449-8bbe51ff8fac2365.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![蓝牙](https://upload-images.jianshu.io/upload_images/16811449-9b85a2fc64560050.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![WiFi满速](https://upload-images.jianshu.io/upload_images/16811449-ecb97a6ebd637786.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 
  ![按教程设置就行](https://upload-images.jianshu.io/upload_images/16811449-13ffc1480e4bdc31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -173,6 +203,37 @@ sudo spctl --master-disable
 
 ![SD读卡器，USB2.0的速度](https://upload-images.jianshu.io/upload_images/16811449-85e8c48f118d240d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+##解锁CFG
+##机型不是Dell 7567，请不要看下面的方法；
+##BIOS版本不是1.10.0，请小心使用！
+
+![可以看到地址为0x4DE](https://upload-images.jianshu.io/upload_images/16811449-5aa5833d754ad0b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+1.从上图中可以看到CFG lock的地址是`0x4DE`，默认是`开启`状态；
+2.从我们的`modGRUBShell.efi`(可以像添加Clover启动项一样将这个efi文件添加为启动项)启动；
+3.进入之后输入`setup_var_3 0x4DE`，查看返回值是不是`0x01`，如果不是请关闭或重启系统，查看上面两位大佬的教程重头来过；
+4.如果是`0x01`，那么输入 `setup_var_3 0x4DE 0x00`，输入`reboot`重启系统，使用Hackintool可以看到下面的样子：
+![image.png](https://upload-images.jianshu.io/upload_images/16811449-0d65585e34373c3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+至此解锁完成！顺便把`启用HWP`勾上！
+
 
 
 ## 感谢浏览！！！!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
