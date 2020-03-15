@@ -219,9 +219,13 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 ![可以看到地址为0x4DE](https://upload-images.jianshu.io/upload_images/16811449-5aa5833d754ad0b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 1.从上图中可以看到CFG lock的地址是`0x4DE`，默认是`开启`状态；
+
 2.从我们的`modGRUBShell.efi`(可以像添加Clover启动项一样将这个efi文件添加为启动项)启动；
+
 3.进入之后输入`setup_var_3 0x4DE`，查看返回值是不是`0x01`，如果不是请关闭或重启系统，查看上面两位大佬的教程重头来过；
+
 4.如果是`0x01`，那么输入 `setup_var_3 0x4DE 0x00`，输入`reboot`重启系统，使用Hackintool可以看到下面的样子：
+
 ![image.png](https://upload-images.jianshu.io/upload_images/16811449-67c703cd446da8b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
