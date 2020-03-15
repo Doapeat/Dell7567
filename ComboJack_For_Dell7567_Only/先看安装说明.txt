@@ -1,0 +1,8 @@
+黑苹果上alc256耳麦支持(该版本仅限戴尔7567使用)
+1. 删除CodecCommander.kext以及alcplugfix守护程序，把VerbStub.kext放进Clover/kexts/Other
+建议之前安装过alcplugfix的，卸载之后用hackintool重建一下缓存，重启后再进行后续操作。
+（PS：卸载alcplugfix时需要解锁sle，具体解锁命令百度一下就有。）
+2. 打开”双击自动安装.command“，运行完成后重启
+3. 再次插入耳机时，会弹出对话框询问
+PS：建议搭配AppleALC V1.4.7及以上版本，节点ID16以获得近乎完美的体验
+   如果出现睡眠唤醒切换无效，尝试使用（非必要项）：sudo spctl --add /usr/local/sbin/ComboJack

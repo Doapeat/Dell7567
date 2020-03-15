@@ -12,36 +12,70 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change ECDV to EC</string>
+					<string>OSID to XSID</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					RUNEVg==
-					</data>
+					<data>T1NJRA==</data>
 					<key>Replace</key>
-					<data>
-					RUNfXw==
-					</data>
+					<data>WFNJRA==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change _OSI to XOSI</string>
+					<string>_OSI to XOSI</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X09TSQ==
-					</data>
+					<data>X09TSQ==</data>
 					<key>Replace</key>
-					<data>
-					WE9TSQ==
-					</data>
+					<data>WE9TSQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_CRS to XCRS in TPD1</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X0NSUw==</data>
+					<key>Replace</key>
+					<data>WENSUw==</data>
+					<key>TgtBridge</key>
+					<data>VFBEMQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_STA to XSTA in GPI0</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X1NUQQ==</data>
+					<key>Replace</key>
+					<data>WFNUQQ==</data>
+					<key>TgtBridge</key>
+					<data>R1BJMA==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>ECDV to EC</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>RUNEVg==</data>
+					<key>Replace</key>
+					<data>RUNfXw==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>6D04 to 6D00</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>Cm0KBA==</data>
+					<key>Replace</key>
+					<data>Cm0KAA==</data>
 				</dict>
 			</array>
 		</dict>
-		<key>FixHeaders</key>
-		<true/>
 	</dict>
 	<key>Boot</key>
 	<dict>
@@ -50,11 +84,14 @@
 		<key>HibernationFixup</key>
 		<true/>
 	</dict>
+	<key>BootGraphics</key>
+	<dict>
+		<key>UIScale</key>
+		<integer>2</integer>
+	</dict>
 	<key>CPU</key>
 	<dict>
 		<key>HWPEnable</key>
-		<true/>
-		<key>UseARTFrequency</key>
 		<true/>
 	</dict>
 	<key>Devices</key>
@@ -70,6 +107,8 @@
 			<dict>
 				<key>AAPL,slot-name</key>
 				<string>Internal@0,28,0/0,0</string>
+				<key>built-in</key>
+				<data>AQ==</data>
 				<key>device_type</key>
 				<string>Ethernet controller</string>
 				<key>model</key>
@@ -79,6 +118,8 @@
 			<dict>
 				<key>AAPL,slot-name</key>
 				<string>WLAN</string>
+				<key>built-in</key>
+				<data>AQ==</data>
 				<key>compatible</key>
 				<string>pci14e4,4331</string>
 				<key>device_type</key>
@@ -97,15 +138,13 @@
 				<key>device_type</key>
 				<string>Audio device</string>
 				<key>layout-id</key>
-				<data>
-				EAAAAA==
-				</data>
+				<data>EAAAAA==</data>
 				<key>model</key>
 				<string>CM238 HD Audio Controller</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
-				<key>#framebuffer-con2-index</key>
+				<key>framebuffer-con2-index</key>
 				<data>
 				/////w==
 				</data>
@@ -167,8 +206,6 @@
 		</dict>
 		<key>USB</key>
 		<dict>
-			<key>AddClockID</key>
-			<true/>
 			<key>FixOwnership</key>
 			<true/>
 			<key>HighCurrent</key>
@@ -200,35 +237,39 @@
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
-		<key>AppleIntelCPUPM</key>
-		<true/>
 		<key>AppleRTC</key>
 		<true/>
-		<key>DellSMBIOSPatch</key>
-		<true/>
-		<key>KernelCpu</key>
-		<true/>
-		<key>KernelPm</key>
-		<true/>
-		<key>KernelToPatch</key>
+		<key>KextsToPatch</key>
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>
-				ILniAAAADzA=
-				</data>
+				<data>SU9LaXQ=</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2C</string>
 				<key>Replace</key>
-				<data>
-				ILniAAAAkJA=
-				</data>
+				<data>SU9LaXM=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>SU9LaXQ=</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2CController</string>
+				<key>Replace</key>
+				<data>SU9LaXM=</data>
 			</dict>
 		</array>
-		<key>KernelXCPM</key>
-		<true/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
@@ -239,12 +280,14 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
+		<key>Manufacturer</key>
+		<string>Apple Inc.</string>
 		<key>Mobile</key>
 		<true/>
 		<key>PlatformFeature</key>
-		<string>0x1A</string>
+		<string>0x0</string>
 		<key>ProductName</key>
-		<string>MacBookPro14,3</string>
+		<string>MacBookPro14,1</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
