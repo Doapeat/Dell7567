@@ -1,4 +1,4 @@
-## 之前有人让我建群，我懒，直到现在很多人遇到了问题找我，我才发现真是能力越大，责任越大，所以建个交流群吧
+## 所以建个交流群吧
 ![](https://upload-images.jianshu.io/upload_images/16811449-ef82375ff85c3a2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
@@ -40,17 +40,16 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 
 独行秀才的老窝：[OpenCore引导Mac下解除CFG LOCK锁定](https://shuiyunxc.gitee.io/2020/02/13/Unlock/index/)
 
-云屋小站：[无需刷BIOS！使用setup_var命令解锁MSR0xE2锁定，修改dvmt值，开启AHCI](https://www.misonsky.cn/115.html)
+云屋小站：[无需刷BIOS！使用setup_var命令解锁MSR 0xE2锁定，修改dvmt值，开启AHCI](https://www.misonsky.cn/115.html)
 
 ## 今后的更新都是基于解锁`CFG lock`的EFI，没有解锁的请自行打补丁；
-
 
 ### 在此处提供一个简单的方法：写在文章最后
 
 
 
-
 ## 更新日志
+
 * 2020.3.15
 	* 重新定制触控板驱动，感谢`VicQ`老哥，使用GPI0中断方式驱动，效率更高，更加跟手；
 	* 改用ApplePS2Controller.kext，导致`Fn+S` `Fn+B`无法使用，但是可以在`设置`中修改成其他的快捷键，不过`设置`中`屏幕亮度`的选项隐藏了，插入一个外接键盘即可显示，有需要的自行换成VoodooPS2Controller.kext，不过不好驱动，容易掉触控板；
@@ -217,8 +216,8 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 2.从我们的`modGRUBShell.efi`(可以像添加Clover启动项一样将这个efi文件添加为启动项)启动；
 3.进入之后输入`setup_var_3 0x4DE`，查看返回值是不是`0x01`，如果不是请关闭或重启系统，查看上面两位大佬的教程重头来过；
 4.如果是`0x01`，那么输入 `setup_var_3 0x4DE 0x00`，输入`reboot`重启系统，使用Hackintool可以看到下面的样子：
+![image.png](https://upload-images.jianshu.io/upload_images/16811449-67c703cd446da8b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![image.png](https://upload-images.jianshu.io/upload_images/16811449-0d65585e34373c3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 至此解锁完成！顺便把`启用HWP`勾上！
 
