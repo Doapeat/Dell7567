@@ -1,4 +1,4 @@
-##之前有人让我建群，我懒，直到现在很多人遇到了问题找我，我才发现真是能力越大，责任越大，所以建个交流群吧
+## 之前有人让我建群，我懒，直到现在很多人遇到了问题找我，我才发现真是能力越大，责任越大，所以建个交流群吧
 ![](https://upload-images.jianshu.io/upload_images/16811449-ef82375ff85c3a2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
@@ -34,16 +34,18 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 
 * 自己写了一些方便的脚本方便大家使用，在`Scripts`文件夹内，自行选择使用
 
-##解锁CFG
+## 解锁CFG
+
 推荐下面这两位老哥的解锁办法，两个办法的工具我都提供了，更推荐使用set_dump GUI来查找地址，速度更快！
 
 独行秀才的老窝：[OpenCore引导Mac下解除CFG LOCK锁定](https://shuiyunxc.gitee.io/2020/02/13/Unlock/index/)
-云屋小站：[无需刷BIOS！使用setup_var命令解锁MSR 0xE2锁定，修改dvmt值，开启AHCI](https://www.misonsky.cn/115.html)
 
-##今后的更新都是基于解锁`CFG lock`的EFI，没有解锁的请自行打补丁；
+云屋小站：[无需刷BIOS！使用setup_var命令解锁MSR0xE2锁定，修改dvmt值，开启AHCI](https://www.misonsky.cn/115.html)
+
+## 今后的更新都是基于解锁`CFG lock`的EFI，没有解锁的请自行打补丁；
 
 
-###在此处提供一个简单的方法：写在文章最后
+### 在此处提供一个简单的方法：写在文章最后
 
 
 
@@ -204,7 +206,9 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 ![SD读卡器，USB2.0的速度](https://upload-images.jianshu.io/upload_images/16811449-85e8c48f118d240d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##解锁CFG
+
 ##机型不是Dell 7567，请不要看下面的方法；
+
 ##BIOS版本不是1.10.0，请小心使用！
 
 ![可以看到地址为0x4DE](https://upload-images.jianshu.io/upload_images/16811449-5aa5833d754ad0b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -213,6 +217,7 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 2.从我们的`modGRUBShell.efi`(可以像添加Clover启动项一样将这个efi文件添加为启动项)启动；
 3.进入之后输入`setup_var_3 0x4DE`，查看返回值是不是`0x01`，如果不是请关闭或重启系统，查看上面两位大佬的教程重头来过；
 4.如果是`0x01`，那么输入 `setup_var_3 0x4DE 0x00`，输入`reboot`重启系统，使用Hackintool可以看到下面的样子：
+
 ![image.png](https://upload-images.jianshu.io/upload_images/16811449-0d65585e34373c3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 至此解锁完成！顺便把`启用HWP`勾上！
