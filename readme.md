@@ -17,10 +17,11 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 
 ## 安装注意事项
 * BIOS设置:
-	* 关闭 `Legacy Option ROMs`；
 	* 设置 `SATA Mode`为 `AHCI` ，自行百度；
+	* 关闭 `Legacy Option ROMs`；
 	* 关闭 `Secure Boot`；
 	* 关闭 `VT ` (最好)；
+	* 关闭 SGX；
 * `蓝牙驱动:` `BrcmBluetoothInjector.kext` `BrcmFirmwareData.kext` `BrcmPatchRAM2.kext` (3个)；
 `WiFi驱动:` `AirportBrcmFixup.kext` (1个)
 在`\EFI\Clover\kexts\Off`下，是不会启用的，需要的自行放到`\EFI\Clover\kexts\Other` 注意安装顺序：先从BIOS中关闭WiFi和蓝牙再安装系统，然后安装`蓝牙` `WiFi`驱动；
@@ -28,15 +29,17 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 
 * 安装过程中可能会在剩余2分钟安装完成时自动重启，不用担心，直接选择刚才安装的盘启动；
 * 在Clover.plist 中的SMBIOS仿冒机型改为`（14,1）`，原来机型是`（14,3）`的麻烦自己改一下，不修改会导致蓝牙或Wi-Fi驱动失败，需重装才能修复；
-* `CodecCommander.kext` 安装到 `Library\Extensions\`下面可以解决唤醒无声问题，不会安装的可以使用` Kext Utility` 、`Hackintool`等安装；
+* ~~`CodecCommander.kext` 安装到 `Library\Extensions\`下面可以解决唤醒无声问题，不会安装的可以使用` Kext Utility` 、`Hackintool`等安装~~；
 
 * ~~使用ALCPlugFix修复耳机杂音~~，改用由`VicQ`老哥制作的`ComboJack_For_Dell7567_Only`驱动耳机，可以驱动麦克风，自行选择，但仅支持7567，其他机型慎用！
 
 * 自己写了一些方便的脚本方便大家使用，在`Scripts`文件夹内，自行选择使用
 
-## 解锁CFG
+## 解锁CFG（损坏硬件我不负责）
 
-推荐下面这两位老哥的解锁办法，两个办法的工具我都提供了，更推荐使用set_dump GUI来查找地址，速度更快！
+推荐下面这三位老哥的解锁办法，两个办法的工具我都提供了，更推荐针针小站的方法，速度更快！提取原始BIOS也可以不用PE，直接在windows提取也是一样的！
+
+针针小站：[【Hackintosh】Dell Precision 5510 解锁BIOS高级设置](https://hyejeong.cn/unlockbios)
 
 独行秀才的老窝：[OpenCore引导Mac下解除CFG LOCK锁定](https://shuiyunxc.gitee.io/2020/02/13/Unlock/index/)
 
@@ -210,7 +213,7 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 
 ![SD读卡器，USB2.0的速度](https://upload-images.jianshu.io/upload_images/16811449-85e8c48f118d240d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 解锁CFG
+## 解锁CFG（损坏硬件我不负责）
 
 ## 机型不是Dell 7567，请不要看下面的方法；
 
@@ -234,20 +237,3 @@ EFI文件在这里[GitHub](https://github.com/Doapeat/Dell7567)
 
 
 ## 感谢浏览！！！!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
