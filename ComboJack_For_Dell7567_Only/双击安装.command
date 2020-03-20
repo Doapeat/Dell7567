@@ -6,7 +6,7 @@ echo "如您错误的打开了该程序，请不要输入密码并关闭本程�
 echo "安装在非7567机型上出现任何问题烦请自行解决"
 echo "建议搭配AppleALC V1.4.7及以上版本，节点ID16以获得近乎完美的体验"
 echo "安装前请先查看安装说明"
-echo "2020.3.13 VicQ"
+echo "2020.3.17 VicQ"
 
 if [[ $EUID -ne 0 ]];
 then
@@ -52,7 +52,7 @@ echo "再次提醒，该版本修改过部分代码,所以仅适用于 ALC256 �
 echo "如您错误的安装在其他机型上，请点击\"双击卸载.command\"进行卸载操作"
 echo "安装在非指定机型上出现问题烦请自行解决"
 echo "部分内容汉化:\"VicQ"\"
-echo "2020.3.13"
+echo "2020.3.17"
 echo
 echo "你可以检查程序是否在IORegistry中工作："
 echo "应该有一个名为\"VerbStubUserClient\"的设备连接到 "
