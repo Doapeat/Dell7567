@@ -254,29 +254,28 @@
 
 
 |支付宝红包|微信 |支付宝|
-| --- | --- | --- |
-|![Alipay envelope](.\Screenshots\eve.png)|![Wechatpay](.\Screenshots\wechatpay.png)|![Alipay](.\Screenshots\alipay.png)|
+| :-: | :-: | :-: |
+|<img src=".\Screenshots\eve.png" alt="Alipay envelope"  />|<img src=".\Screenshots\wechatpay.png" alt="Wechatpay"  />|<img src=".\Screenshots\alipay.png" alt="Alipay"  />|
 
 
 ## 图片欣赏
 
-![关于](.\Screenshots\mian.png)
+<img src=".\Screenshots\mian.png" alt="关于"  />
 
-<img src=".\Screenshots\i2c.png" alt="触控板完美驱动" style="zoom:80%;" />
+<img src=".\Screenshots\i2c.png" alt="触控板完美驱动"  />
 
 <img src=".\Screenshots\freq.png" alt="核显还是表现还是不太好，可能是CPU调度的问题？" style="zoom:50%;" />
 
 
 
-![image.png](.\Screenshots\brightness.png)
+<img src=".\Screenshots\brightness.png" alt="image.png" style="zoom:80%;" />
 
 
 
 
- ![按教程设置就行](.\Screenshots\touchpad.png)
+ <img src=".\Screenshots\touchpad.png" alt="按教程设置就行" style="zoom: 150%;" />
 
-
-![SD读卡器，USB2.0的速度](.\Screenshots\crw.png)
+<img src=".\Screenshots\crw.png" alt="SD读卡器，USB2.0的速度"  />
 
 
 
@@ -290,7 +289,7 @@
 
 ## 升级BIOS不一定会重新锁定CFG，自行校验！
 
-![可以看到地址为0x4DE](.\Screenshots\cfg1.png)
+<img src=".\Screenshots\cfg1.png" alt="可以看到地址为0x4DE"  />
 
 1.从上图中可以看到CFG lock的地址是`0x4DE`，默认是`开启`状态；
 
@@ -300,7 +299,7 @@
 
 4.如果是`0x01`，那么输入 `setup_var 0x4DE 0x00`，输入`reboot`重启系统，使用Hackintool可以看到下面的样子：
 
-![检查解锁](.\Screenshots\cfg2.png)
+<img src=".\Screenshots\cfg2.png" alt="检查解锁"  />
 
 
 至此解锁完成！顺便把`启用HWP`勾上！

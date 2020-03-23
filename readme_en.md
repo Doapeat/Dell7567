@@ -241,28 +241,27 @@ I recommend the following three methods，tools are in `Unlock-CFG` folder，针
 
 |Red envelope|Wechatpay |Alipay|
 | :-: | :-: | :-: |
-|![Alipay envelope](.\Screenshots\eve.png)|![Wechatpay](.\Screenshots\wechatpay.png)|![Alipay](.\Screenshots\alipay.png)|
+|<img src=".\Screenshots\eve.png" alt="Alipay envelope"  />|<img src=".\Screenshots\wechatpay.png" alt="Wechatpay"  />|<img src=".\Screenshots\alipay.png" alt="Alipay"  />|
 
 
 ## Gallery
 
-![关于](.\Screenshots\mian.png)
+<img src=".\Screenshots\mian.png" alt="关于"  />
 
-<img src=".\Screenshots\i2c.png" alt="触控板完美驱动" style="zoom:80%;" />
+<img src=".\Screenshots\i2c.png" alt="触控板完美驱动"  />
 
 <img src=".\Screenshots\freq.png" alt="核显还是表现还是不太好，可能是CPU调度的问题？" style="zoom:50%;" />
 
 
 
-![image.png](.\Screenshots\brightness.png)
+<img src=".\Screenshots\brightness.png" alt="image.png"  />
 
 
 
 
- ![按教程设置就行](.\Screenshots\touchpad.png)
+ <img src=".\Screenshots\touchpad.png" alt="按教程设置就行" style="zoom:150%;" />
 
-
-![SD读卡器，USB2.0的速度](.\Screenshots\crw.png)
+<img src=".\Screenshots\crw.png" alt="SD读卡器，USB2.0的速度"  />
 
 
 
@@ -274,7 +273,7 @@ I recommend the following three methods，tools are in `Unlock-CFG` folder，针
 
 ## Upgrading the BIOS almost not Enable the CFG-lock and verify it yourself!
 
-![可以看到地址为0x4DE](.\Screenshots\cfg1.png)
+<img src=".\Screenshots\cfg1.png" alt="可以看到地址为0x4DE"  />
 
 1.As you can see from the figure above, the address of the CFG-lock is `0x4DE`, and the default state is ` on` ;
 
@@ -284,7 +283,7 @@ I recommend the following three methods，tools are in `Unlock-CFG` folder，针
 
 4.If it returns `0x01`, you can try to  enter ` setup_var 0x4DE 0x00` , and enter `reboot` to restart the system, and use Hackintool to see the following:
 
-![检查解锁](.\Screenshots\cfg2.png)
+<img src=".\Screenshots\cfg2.png" alt="检查解锁"  />
 
 So far, disable CFG-lock is complete! 
 
