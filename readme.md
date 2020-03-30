@@ -1,4 +1,4 @@
-[中文](readme.md) [English](readme_en.md)
+[中文](readme.md) |[English](readme_en.md)
 
 
 
@@ -45,7 +45,7 @@
 
 云屋小站：[无需刷BIOS！使用setup_var命令解锁MSR 0xE2锁定，修改dvmt值，开启AHCI](https://www.misonsky.cn/115.html)
 
-## 今后的更新都是基于解锁`CFG lock`的EFI，请自行选择对应的`Clover.plist`
+## 今后的更新都是基于解锁`CFG lock`的EFI，请自行选择对应的`config.plist`
 
 | match | CFG_Unlocked Laptop |CFG_Locked Laptp |
 | ------ | ------ | ------ |

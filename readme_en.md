@@ -1,4 +1,4 @@
-[中文](readme.md) [English](readme_en.md)
+[中文](readme.md) |[English](readme_en.md)
 
 
 
@@ -37,7 +37,7 @@ I recommend the following three methods，tools are in `Unlock-CFG` folder，针
 
 云屋小站：[无需刷BIOS！使用setup_var命令解锁MSR 0xE2锁定，修改dvmt值，开启AHCI](https://www.misonsky.cn/115.html)
 
-## Future updates are based on PC witch Disabled `CFG lock`, please select the corresponding` Clover.plist` yourself
+## Future updates are based on PC witch Disabled `CFG lock`, please select the corresponding` config.plist` yourself
 
 | match | CFG_Unlocked Laptop |CFG_Locked Laptp |
 | :----: | :----: | :----: |
