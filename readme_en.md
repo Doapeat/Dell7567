@@ -1,4 +1,4 @@
-[中文](readme.md) |[English](readme_en.md)
+[中文](readme.md) |English
 
 
 
@@ -230,13 +230,21 @@ I recommend the following three methods，tools are in `Unlock-CFG` folder，针
 		
 		* Hackintosh sleeps well when plug out AC Adaptor. When AC adapter plug in, Hackintosh can't sleep；
 		
+		  
+		
+	
+* 2020.4.30
+
+
+  * Add `config.plist` based on CFG-locked enabled；
+  * Regular drivers updates；
 
 
 
 
 
 
-## If you acknowledge my efforts, you can support my subsequent updates through `Reward`
+## If you acknowledge my efforts, you can support my subsequent updates by `Reward` 
 
 
 |Red envelope|Wechatpay |Alipay|

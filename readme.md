@@ -1,4 +1,4 @@
-[中文](readme.md) |[English](readme_en.md)
+中文|[English](readme_en.md)
 
 
 
@@ -244,8 +244,14 @@
 		
 		* 电池睡眠正常，接外接适配器睡不死，外设全部取了一样睡不死；
 		
+		  
+		
+	
+* 2020.4.30
 
 
+  * 又把未解锁CFG的config.plist加回来了，各取所需；
+  * 常规驱动更新；
 
 
 

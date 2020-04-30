@@ -16,13 +16,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					T1NJRA==
-					</data>
+					<data>T1NJRA==</data>
 					<key>Replace</key>
-					<data>
-					WFNJRA==
-					</data>
+					<data>WFNJRA==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -30,13 +26,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X09TSQ==
-					</data>
+					<data>X09TSQ==</data>
 					<key>Replace</key>
-					<data>
-					WE9TSQ==
-					</data>
+					<data>WE9TSQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -44,17 +36,11 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X0NSUw==
-					</data>
+					<data>X0NSUw==</data>
 					<key>Replace</key>
-					<data>
-					WENSUw==
-					</data>
+					<data>WENSUw==</data>
 					<key>TgtBridge</key>
-					<data>
-					VFBEMQ==
-					</data>
+					<data>VFBEMQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -62,17 +48,11 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X1NUQQ==
-					</data>
+					<data>X1NUQQ==</data>
 					<key>Replace</key>
-					<data>
-					WFNUQQ==
-					</data>
+					<data>WFNUQQ==</data>
 					<key>TgtBridge</key>
-					<data>
-					R1BJMA==
-					</data>
+					<data>R1BJMA==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -80,13 +60,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					RUNEVg==
-					</data>
+					<data>RUNEVg==</data>
 					<key>Replace</key>
-					<data>
-					RUNfXw==
-					</data>
+					<data>RUNfXw==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -94,13 +70,9 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					Cm0KBA==
-					</data>
+					<data>Cm0KBA==</data>
 					<key>Replace</key>
-					<data>
-					Cm0KAA==
-					</data>
+					<data>Cm0KAA==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -108,13 +80,49 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					U01FRQE=
-					</data>
+					<data>U01FRQE=</data>
 					<key>Replace</key>
-					<data>
-					WE1FRQE=
-					</data>
+					<data>WE1FRQE=</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_PTS to ZPTS(1,N)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X1BUUwE=</data>
+					<key>Replace</key>
+					<data>WlBUUwE=</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_WAK to ZWAK(1,N)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X1dBSwE=</data>
+					<key>Replace</key>
+					<data>WldBSwE=</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>_LID to XLID</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>X0xJRAA=</data>
+					<key>Replace</key>
+					<data>WExJRAA=</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>BTNV to XTNV(dell)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>QlROVgI=</data>
+					<key>Replace</key>
+					<data>WFROVgI=</data>
 				</dict>
 			</array>
 		</dict>
@@ -145,14 +153,23 @@
 		</dict>
 		<key>Properties</key>
 		<dict>
+			<key>PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,28,0/0,0</string>
+				<key>built-in</key>
+				<data>AQ==</data>
+				<key>device_type</key>
+				<string>Ethernet controller</string>
+				<key>model</key>
+				<string>RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller</string>
+			</dict>
 			<key>#PciRoot(0x0)/Pci(0x1C,0x5)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
 				<string>WLAN</string>
 				<key>built-in</key>
-				<data>
-				AQ==
-				</data>
+				<data>AQ==</data>
 				<key>compatible</key>
 				<string>pci14e4,4331</string>
 				<key>device_type</key>
@@ -164,19 +181,6 @@
 				<key>pci-aspm-default</key>
 				<integer>0</integer>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>AAPL,slot-name</key>
-				<string>Internal@0,28,0/0,0</string>
-				<key>built-in</key>
-				<data>
-				AQ==
-				</data>
-				<key>device_type</key>
-				<string>Ethernet controller</string>
-				<key>model</key>
-				<string>RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller</string>
-			</dict>
 			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -184,42 +188,28 @@
 				<key>device_type</key>
 				<string>Audio device</string>
 				<key>layout-id</key>
-				<data>
-				EAAAAA==
-				</data>
+				<data>EAAAAA==</data>
 				<key>model</key>
 				<string>CM238 HD Audio Controller</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>
-				AAAbWQ==
-				</data>
+				<data>AAAbWQ==</data>
 				<key>AAPL,slot-name</key>
 				<string>Internal@0,2,0</string>
 				<key>device-id</key>
-				<data>
-				G1kAAA==
-				</data>
+				<data>G1kAAA==</data>
 				<key>device_type</key>
 				<string>VGA compatible controller</string>
 				<key>disable-external-gpu</key>
-				<data>
-				AQAAAA==
-				</data>
+				<data>AQAAAA==</data>
 				<key>enable-hdmi20</key>
-				<data>
-				AQAAAA==
-				</data>
+				<data>AQAAAA==</data>
 				<key>framebuffer-patch-enable</key>
-				<data>
-				AQAAAA==
-				</data>
+				<data>AQAAAA==</data>
 				<key>framebuffer-unifiedmem</key>
-				<data>
-				AAAAgA==
-				</data>
+				<data>AAAAgA==</data>
 				<key>model</key>
 				<string>Intel HD Graphics 630</string>
 			</dict>
@@ -253,19 +243,7 @@
 			<false/>
 		</dict>
 		<key>Theme</key>
-		<string>Catalina</string>
-	</dict>
-	<key>Graphics</key>
-	<dict>
-		<key>Inject</key>
-		<dict>
-			<key>ATI</key>
-			<false/>
-			<key>Intel</key>
-			<false/>
-			<key>NVidia</key>
-			<false/>
-		</dict>
+		<string>Catalina4K</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -279,17 +257,13 @@
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>
-				SU9LaXQ=
-				</data>
+				<data>SU9LaXQ=</data>
 				<key>InfoPlistPatch</key>
 				<true/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelLpssI2C</string>
 				<key>Replace</key>
-				<data>
-				SU9LaXM=
-				</data>
+				<data>SU9LaXM=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -297,17 +271,13 @@
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
-				<data>
-				SU9LaXQ=
-				</data>
+				<data>SU9LaXQ=</data>
 				<key>InfoPlistPatch</key>
 				<true/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelLpssI2CController</string>
 				<key>Replace</key>
-				<data>
-				SU9LaXM=
-				</data>
+				<data>SU9LaXM=</data>
 			</dict>
 		</array>
 	</dict>
@@ -316,12 +286,10 @@
 		<key>BooterConfig</key>
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
-		<string>0x03E7</string>
+		<string>0x67</string>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>Family</key>
-		<string>MacBook Pro</string>
 		<key>Manufacturer</key>
 		<string>Apple Inc.</string>
 		<key>Mobile</key>
