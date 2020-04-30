@@ -234,10 +234,8 @@ I recommend the following three methods，tools are in `Unlock-CFG` folder，针
 		
 	
 * 2020.4.30
-
-
-  * Add `config.plist` based on CFG-locked enabled；
-  * Regular drivers updates；
+    * Add `config.plist` based on CFG-locked enabled；
+    * Regular drivers updates；
 
 
 
